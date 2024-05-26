@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  telebot:
+    build: .
+    container_name: telebot
+    env_file: .env
+    ports:
+      - "8443:8443"
+    volumes:
+      - .:/app
+    command: python tele.py
